@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de artículos GRID y ::before</title>
+
+    <style>
+        * {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            /* --radio: 1rem; */
+            --radio: 0;
+            
+            /* Tras varias pruebas, creo que lo mejor es una paleta de 4 colores 
+                De modo que 
+                    - texto general   = color que contraste con el fondo texto
+                    - texto resaltado = fondo texto
+                    - fondo resaltado = color corporativo. Que sea fuerte.
+                    - fondo general   = un tono intermedio del fondo resaltado y el fondo texto. 
+            */
+            
+            --color1: #444;
+            --color2: whitesmoke;
+            --color3: whitesmoke;
+            --color4: rgb(24, 24, 95);  /* cambia este */
+            --color5: darkgrey;
+
+            /* 
+            --color1: #641927;
+            --color2: #7e252c;
+            --color3: #a83833;
+            --color4: #e25a3e;
+            --color5: #ff8e55;
+            */ 
+
+            --texto: var(--color1);
+            --fondo-texto: var(--color2);
+            --texto-resaltado: var(--color3);
+            --fondo-resaltado: var(--color4);
+            --fondo-pagina: var(--color5);
+            
+            background-color: var(--fondo-pagina);
+            color: var(--texto);
+        }
+
+        body {
+            counter-reset: section;
+            padding: 1rem;
+        }
+
+        h1 {
+            counter-reset: subsection;
+            line-height: 2rem;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            line-height: 2em;
+        }
+
+
+        /******************************************************/
+        /**  GALERÍA DE ARTÍCULOS                            **/
+        /******************************************************/
+
+        section.articulos {
+            counter-reset: section;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+            align-items: center;
+            gap: 3rem 0rem;
+            justify-content: space-evenly;
+        }
+
+        article {
+            background-color: var(--fondo-texto);
+            border-radius: var(--radio);
+            color: var(--texto);
+            margin: auto;
+            text-align: justify;
+            width: 300px;
+        }
+
+        article * {
+            background-color: var(--fondo-texto);
+            color: var(--texto);
+            padding: 0 1.5rem;
+        }
+        article img {
+            padding: 0;
+            width: 100%;
+        }
+
+        article::before {
+            /* content: "Section " counter(section) ". "; */
+            content: counter(section);
+            counter-increment: section;
+
+            background-color: var(--fondo-resaltado);
+            border-radius: var(--radio);
+            box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+            color: var(--texto-resaltado);
+            display: inline-block;
+            font-size: 3rem;
+            height: 1.5em;
+            left: -10px;
+            margin: 0 0 -1rem 0;
+            padding: 0.2em 0.1em 0 0.1em;
+            position: relative;
+            text-align: center;
+            top: -10px;
+            vertical-align: bottom;
+            width: 1.5em;
+        }
+        
+        article h2 a {
+            text-decoration: none;
+        }
+        
+        .boton {
+            display: block;
+            margin: -10px 56% ;
+            background-color: transparent;
+            width: 50%;
+        }
+        .button {
+            background-color: var(--fondo-resaltado);
+            color: var(--texto-resaltado);
+            border: none;
+            border-radius: var(--radio);
+            box-shadow: -5px -5px 5px 1px rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Galería de artículos GRID y ::before</h1>
+    </header>
+
+    <section class="articulos">
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x01.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x02.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x03.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x04.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x05.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x06.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x07.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x08.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x09.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x10.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x11.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x12.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x13.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x14.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x15.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x16.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+        <article>
+            <h2><a href="#">Titulo artículo</a></h2>
+            <img src="assets/imgs/articulos320x180/dummy-320x17.jpg" alt="imagen aleatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
+                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
+                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="boton">
+                <a href="#" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+
+    </section>
+
+    <br><br><br>
+
+</body>
+
+</html>

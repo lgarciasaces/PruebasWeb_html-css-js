@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeración en ::before CSS</title>
+
+    <style>
+        * {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            /* --radio: 1rem; */
+            --radio: 0;
+            
+            /* Tras varias pruebas, creo que lo mejor es una paleta de 4 colores 
+                De modo que 
+                    - texto general   = color que contraste con el fondo texto
+                    - texto resaltado = fondo texto
+                    - fondo resaltado = color corporativo. Que sea fuerte.
+                    - fondo general   = un tono intermedio del fondo resaltado y el fondo texto. 
+            */
+            
+            --color1: #444;
+            --color2: whitesmoke;
+            --color3: whitesmoke;
+            --color4: rgb(24, 24, 95);  /* cambia este */
+            --color5: darkgrey;
+
+            /* 
+            --color1: #641927;
+            --color2: #7e252c;
+            --color3: #a83833;
+            --color4: #e25a3e;
+            --color5: #ff8e55;
+            */ 
+
+            --texto: var(--color1);
+            --fondo-texto: var(--color2);
+            --texto-resaltado: var(--color3);
+            --fondo-resaltado: var(--color4);
+            --fondo-pagina: var(--color5);
+            
+            background-color: var(--fondo-pagina);
+            color: var(--texto);
+        }
+
+        body {
+            counter-reset: section;
+            padding: 1rem;
+        }
+
+        h1 {
+            counter-reset: subsection;
+            line-height: 2rem;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            line-height: 2em;
+        }
+
+
+        /******************************************************/
+        /**  Numeración de elementos con ::before            **/
+        /******************************************************/
+        
+        .redondo h1::before {
+            counter-increment: section;
+            /* content: "Section " counter(section) ". "; */
+            content: counter(section);
+            padding: 0.2em 0.5em;
+            margin-right: 0.5em;
+        }
+
+        .redondo h2::before {
+            counter-increment: subsection;
+            content: counter(section) "." counter(subsection) " ";
+            padding: 0.5em 0.2em;
+            margin: 0 1em;
+        }
+
+        .redondo h1::before,
+        .redondo h2::before {
+            background-color: var(--fondo-resaltado);
+            color: var(--texto-resaltado);
+            border-radius: 50%;
+        }
+
+
+        .cuadrado h1::before {
+            counter-increment: section;
+            /* content: "Section " counter(section) ". "; */
+            content: counter(section);
+            padding: 0.2em 0.5em;
+            margin-right: 0.5em;
+        }
+
+        .cuadrado h2::before {
+            counter-increment: subsection;
+            content: counter(section) "." counter(subsection) " ";
+            padding: 0.5em 0.2em;
+            margin: 0 1em;
+        }
+
+        .cuadrado h1::before,
+        .cuadrado h2::before {
+            background-color: var(--fondo-resaltado);
+            color: --texto-resaltado;
+            border: 1px solid var(--texto-resaltado);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Numeración en ::before CSS</h1>
+    </header>
+
+    <section class="redondo">
+        
+        <h1>HTML/CSS Tutorials</h1>
+        <h2>HTML</h2>
+        <h2>CSS</h2>
+        <h2>Bootstrap</h2>
+        <h2>W3.CSS</h2>
+
+        <h1>Scripting Tutorials</h1>
+        <h2>JavaScript</h2>
+        <h2>jQuery</h2>
+        <h2>React</h2>
+
+        <h1>Programming Tutorials</h1>
+        <h2>Python</h2>
+        <h2>Java</h2>
+        <h2>C++</h2>
+    </div>
+
+    <br><br><br>
+
+    <section class="cuadrado">
+
+        <h1>HTML/CSS Tutorials</h1>
+        <h2>HTML</h2>
+        <h2>CSS</h2>
+        <h2>Bootstrap</h2>
+        <h2>W3.CSS</h2>
+
+        <h1>Scripting Tutorials</h1>
+        <h2>JavaScript</h2>
+        <h2>jQuery</h2>
+        <h2>React</h2>
+
+        <h1>Programming Tutorials</h1>
+        <h2>Python</h2>
+        <h2>Java</h2>
+        <h2>C++</h2>
+    </div>
+
+
+</body>
+
+</html>
