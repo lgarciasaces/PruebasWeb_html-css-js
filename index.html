@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de artículos GRID y ::before</title>
+    <title>Miniproyectos de pruebas de lenguajes Web</title>
+    <link rel="shortcut icon" href="assets/imgs/informatica.png" type="image/x-icon" sizes="32x32">
 
     <style>
         * {
@@ -23,8 +24,8 @@
             --color1: #444;
             --color2: whitesmoke;
             --color3: whitesmoke;
-            --color4: rgb(196, 56, 1);  /* cambia este */
-            --color5: rgb(236, 190, 190);
+            --color4: #ee9b40;  /* cambia este */
+            --color5: darkgrey;
 
             /* 
             --color1: #641927;
@@ -52,11 +53,34 @@
         h1 {
             counter-reset: subsection;
             line-height: 2rem;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            background-color: unset;
+            color: var(--texto-resaltado);
+            padding: 2rem;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
         }
-
+        
+        img.logo {
+            height: 6rem;
+            background-color: unset;
+        }
+        
         h2 {
             line-height: 2em;
+            text-align: center;
+        }
+        
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10rem;
+            background-color: var(--fondo-resaltado);
+            /* 
+            box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+             */
         }
 
 
@@ -70,10 +94,10 @@
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 
             align-items: start;
-            gap: 3rem 0rem;
+            gap: 3rem ;
             justify-content: space-evenly;
             max-width: 95%;
-            margin: auto;
+            margin: 12rem auto; 
         }
 
         article {
@@ -82,13 +106,13 @@
             color: var(--texto);
             margin: 0 auto;
             text-align: justify;
-            width: 300px;
+            min-width: 300px;
         }
 
         article * {
             background-color: var(--fondo-texto);
             color: var(--texto);
-            padding: 0 1.5rem;
+            padding: 0 1rem;
         }
         article img {
             padding: 0;
@@ -121,6 +145,9 @@
             text-decoration: none;
         }
         
+        article p {
+            padding: inherit inherit 1em inherit;
+        }
         .boton {
             display: block;
             margin: -10px 56% ;
@@ -141,34 +168,48 @@
             cursor: pointer;
         }
 
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3rem;
+            background-color: var(--fondo-resaltado);
+            color: var(--texto-resaltado);
+            padding: 2rem;
+            box-shadow: -5px -5px 5px 1px rgba(0, 0, 0, 0.5);
+        }
+        footer * {
+            background-color: unset;
+        }
+
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Galería de artículos GRID y ::before</h1>
+        <h1>
+            <img class="logo" src="assets/imgs/logo.png" alt="logo de la web"> 
+            Miniproyectos de pruebas de lenguajes Web
+        </h1>
     </header>
 
     <section class="articulos">
         <article>
-            <h2><a href="#">Titulo artículo</a></h2>
-            <img src="assets/imgs/articulos320x180/dummy-320x01.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <h2><a href="#">Numeración ::before</a></h2>
+            <img src="assets/imgs/numeracion/numeracionCSS.png" alt="imagen aleatoria">
+            <p>Un par de ejemplos de cómo podemos utilizar el pseudoelemeno <strong>::before</strong> para numerar elementos desde CSS</p>
             <div class="boton">
-                <a href="#" class="button">Ir al artículo</a>        
+                <a href="numeracionCSS.html" class="button">Ir al ejemplo</a>        
             </div>
         </article>
 
         <article>
-            <h2><a href="#">Titulo artículo</a></h2>
-            <img src="assets/imgs/articulos320x180/dummy-320x02.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <h2><a href="#">Galería de artículos</a></h2>
+            <img src="assets/imgs/galeriaGridNumBefore/galeriaGridNumBefore.png" alt="imagen aleatoria">
+            <p>Galería de artículos realizada con <strong>CSS Grid</strong> y numerando los artículos mediante <strong>::before</strong></p>
             <div class="boton">
-                <a href="#" class="button">Ir al artículo</a>        
+                <a href="galeriaArticulos.html" class="button">Ir al ejemplo</a>        
             </div>
         </article>
         <article>
@@ -333,6 +374,11 @@
     </section>
 
     <br><br><br>
+
+    <footer>
+        Este es el pie <br>
+        Logo: <a href="https://www.flaticon.es/iconos-gratis/informatica" title="informática iconos">Informática iconos creados por Smashicons - Flaticon</a>
+    </footer>
 
 </body>
 

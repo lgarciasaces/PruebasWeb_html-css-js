@@ -25,7 +25,7 @@
             --color2: whitesmoke;
             --color3: whitesmoke;
             --color4: rgb(24, 24, 95);  /* cambia este */
-            --color5: darkgrey;
+            --color5: rgb(176, 197, 238);
 
             /* 
             --color1: #641927;
@@ -60,6 +60,10 @@
             line-height: 2em;
         }
 
+        section.contenido {
+            display: flex;
+            justify-content: space-around;
+        }
 
         /******************************************************/
         /**  Numeración de elementos con ::before            **/
@@ -77,7 +81,7 @@
             counter-increment: subsection;
             content: counter(section) "." counter(subsection) " ";
             padding: 0.5em 0.2em;
-            margin: 0 1em;
+            margin: 0 2em;
         }
 
         .redondo h1::before,
@@ -87,6 +91,7 @@
             border-radius: 50%;
         }
 
+        /* cuadrados */
 
         .cuadrado h1::before {
             counter-increment: section;
@@ -100,13 +105,13 @@
             counter-increment: subsection;
             content: counter(section) "." counter(subsection) " ";
             padding: 0.5em 0.2em;
-            margin: 0 1em;
+            margin: 0 2em;
         }
 
         .cuadrado h1::before,
         .cuadrado h2::before {
             background-color: var(--fondo-resaltado);
-            color: --texto-resaltado;
+            color: var(--texto-resaltado);
             border: 1px solid var(--texto-resaltado);
         }
 
@@ -119,45 +124,40 @@
         <h1>Numeración en ::before CSS</h1>
     </header>
 
-    <section class="redondo">
+    <section class="contenido">
+        <section class="redondo">
         
-        <h1>HTML/CSS Tutorials</h1>
-        <h2>HTML</h2>
-        <h2>CSS</h2>
-        <h2>Bootstrap</h2>
-        <h2>W3.CSS</h2>
-
-        <h1>Scripting Tutorials</h1>
-        <h2>JavaScript</h2>
-        <h2>jQuery</h2>
-        <h2>React</h2>
-
-        <h1>Programming Tutorials</h1>
-        <h2>Python</h2>
-        <h2>Java</h2>
-        <h2>C++</h2>
-    </div>
-
-    <br><br><br>
-
-    <section class="cuadrado">
-
-        <h1>HTML/CSS Tutorials</h1>
-        <h2>HTML</h2>
-        <h2>CSS</h2>
-        <h2>Bootstrap</h2>
-        <h2>W3.CSS</h2>
-
-        <h1>Scripting Tutorials</h1>
-        <h2>JavaScript</h2>
-        <h2>jQuery</h2>
-        <h2>React</h2>
-
-        <h1>Programming Tutorials</h1>
-        <h2>Python</h2>
-        <h2>Java</h2>
-        <h2>C++</h2>
-    </div>
+            <h1>HTML/CSS Tutorials</h1>
+            <h2>HTML</h2>
+            <h2>CSS</h2>
+            <h2>Bootstrap</h2>
+            <h2>W3.CSS</h2>
+            <h1>Scripting Tutorials</h1>
+            <h2>JavaScript</h2>
+            <h2>jQuery</h2>
+            <h2>React</h2>
+            <h1>Programming Tutorials</h1>
+            <h2>Python</h2>
+            <h2>Java</h2>
+            <h2>C++</h2>
+        </section>
+        <br><br><br>
+        <section class="cuadrado">
+            <h1>HTML/CSS Tutorials</h1>
+            <h2>HTML</h2>
+            <h2>CSS</h2>
+            <h2>Bootstrap</h2>
+            <h2>W3.CSS</h2>
+            <h1>Scripting Tutorials</h1>
+            <h2>JavaScript</h2>
+            <h2>jQuery</h2>
+            <h2>React</h2>
+            <h1>Programming Tutorials</h1>
+            <h2>Python</h2>
+            <h2>Java</h2>
+            <h2>C++</h2>
+        </section>
+    </section>
 
 
 </body>
