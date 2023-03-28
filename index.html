@@ -117,6 +117,8 @@
         article img {
             padding: 0;
             width: 100%;
+            height: 220px;
+            overflow-y: hidden;
         }
 
         article::before {
@@ -148,6 +150,11 @@
         article p {
             padding: inherit inherit 1em inherit;
         }
+        div.descripcion {
+            padding: 0;
+            height: 120px;
+        }
+
         .boton {
             display: block;
             margin: -10px 56% ;
@@ -196,39 +203,44 @@
 
     <section class="articulos">
         <article>
-            <h2><a href="#">Numeración ::before</a></h2>
-            <img src="assets/imgs/numeracion/numeracionCSS.png" alt="imagen aleatoria">
-            <p>Un par de ejemplos de cómo podemos utilizar el pseudoelemeno <strong>::before</strong> para numerar elementos desde CSS</p>
+            <h2><a href="galeriaImagenesGridResponsive.html">Galería Masonry Grid</a></h2>
+            <img src="assets/imgs/galeriaImagenesGridResponsive/galeriaImagenesGridResponsive.png" alt="Galería Masonry responsive Grid">
+            <div class="descripcion">
+                <p>Galería Masonry responsive realizada con Grid CSS.</p>
+            </div>
+            <div class="boton">
+                <a href="galeriaImagenesGridResponsive.html" class="button">Ir al artículo</a>        
+            </div>
+        </article>
+        
+        <article>
+            <h2><a href="numeracionCSS.html">Numeración ::before</a></h2>
+            <img src="assets/imgs/numeracion/numeracionCSS.png" alt="Numeración con ::before">
+            <div class="descripcion">
+                <p>Un par de ejemplos de cómo podemos utilizar el pseudoelemeno <strong>::before</strong> para numerar elementos desde CSS</p>
+            </div>
             <div class="boton">
                 <a href="numeracionCSS.html" class="button">Ir al ejemplo</a>        
             </div>
         </article>
 
         <article>
-            <h2><a href="#">Galería de artículos</a></h2>
-            <img src="assets/imgs/galeriaGridNumBefore/galeriaGridNumBefore.png" alt="imagen aleatoria">
-            <p>Galería de artículos realizada con <strong>CSS Grid</strong> y numerando los artículos mediante <strong>::before</strong></p>
+            <h2><a href="galeriaArticulos.html">Galería de artículos</a></h2>
+            <img src="assets/imgs/galeriaGridNumBefore/galeriaGridNumBefore.png" alt="Galeria Grid numerada con ::before">
+            <div class="descripcion">
+                <p>Galería de artículos realizada con <strong>CSS Grid</strong> y numerando los artículos mediante <strong>::before</strong></p>
+            </div>
             <div class="boton">
                 <a href="galeriaArticulos.html" class="button">Ir al ejemplo</a>        
-            </div>
-        </article>
-        <article>
-            <h2><a href="#">Titulo artículo</a></h2>
-            <img src="assets/imgs/articulos320x180/dummy-320x03.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
-            <div class="boton">
-                <a href="#" class="button">Ir al artículo</a>        
             </div>
         </article>
 
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
-            <img src="assets/imgs/articulos320x180/dummy-320x04.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <img src="assets/imgs/prueba.png" alt="imagen aleatoria">
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -236,9 +248,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x05.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -247,9 +259,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x06.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -257,9 +269,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x07.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -268,9 +280,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x08.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -278,9 +290,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x09.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -289,9 +301,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x10.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -299,9 +311,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x11.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -310,9 +322,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x12.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -321,9 +333,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x13.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -332,9 +344,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x14.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -342,9 +354,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x15.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -353,9 +365,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x16.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
@@ -363,9 +375,9 @@
         <article>
             <h2><a href="#">Titulo artículo</a></h2>
             <img src="assets/imgs/articulos320x180/dummy-320x17.jpg" alt="imagen aleatoria">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero
-                veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi
-                repudiandae? Exercitationem, sit aliquam.</p>
+            <div class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+            </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        
             </div>
