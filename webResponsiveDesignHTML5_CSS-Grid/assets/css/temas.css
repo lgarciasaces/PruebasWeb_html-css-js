@@ -1,0 +1,63 @@
+:root {
+  --font-titulo: "Bebas Neue", cursive;
+  --font-texto: "Montserrat", sans-serif;
+
+  /* Variables del tema light */
+  --main-color: #1083d6;
+  --title-color: #2a3b47;
+  --text-color: #697477;
+  --light-text-color: #a0a7ac;
+  --border-color: #eff3f5;
+  --container-color: #ffffff;
+  --body-color: #fbfbfe;
+
+  /* Colores pastel de fondo */
+  --amarillo: #ffd700;
+  --verde: #90ee90;
+  --rosa: #ffc0cb;
+  --azul: #b0e0e6;
+  --melocoton: #ffa07a;
+}
+
+/* Variables para el tema dark */
+body.dark-theme {
+  --dark-main-color: #52a5e0;
+  --dark-title-color: #eff3f5;
+  --dark-text-color: #c8cdd0;
+  --dark-light-text-color: #a0a7ac;
+  --dark-border-color: #2a3b47;
+  --dark-container-color: #212e36;
+  --dark-body-color: #192229;
+
+  --dark-border-link-hidden: rgba(82, 165, 224, 0);
+  --dark-border-link-visible: rgba(82, 165, 224, 1);
+
+  /* Colores pastel de fondo */
+  --violeta-oscuro: #3b003b;
+  --verde-bosque: #228b22;
+  --verde-oliva: #6b8e23;
+  --azul-indigo: #4b0082;
+  --rojo-oscuro: #800000;
+}
+
+body {
+  font-family: var(--font-texto);
+  color: var(--dark-text-color);
+  background-color: var(--dark-body-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-title-color);
+  font-family: var(--font-titulo);
+  border: 1px dashed white;
+}
+
+.contenedor-grid > * {
+  /* aplicamos estilos a todos los hijos del contenedor-grid (body) */
+  border: 1px solid var(--dark-main-color);
+}

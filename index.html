@@ -7,196 +7,20 @@
     <title>Miniproyectos de pruebas de lenguajes Web</title>
     <link rel="shortcut icon" href="assets/imgs/informatica.png" type="image/x-icon" sizes="32x32">
 
-    <style>
-        * {
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-            /* --radio: 1rem; */
-            --radio: 0;
-            
-            /* Tras varias pruebas, creo que lo mejor es una paleta de 4 colores 
-                De modo que 
-                    - texto general   = color que contraste con el fondo texto
-                    - texto resaltado = fondo texto
-                    - fondo resaltado = color corporativo. Que sea fuerte.
-                    - fondo general   = un tono intermedio del fondo resaltado y el fondo texto. 
-            */
-            
-            --color1: #444;
-            --color2: whitesmoke;
-            --color3: whitesmoke;
-            --color4: #ee9b40;  /* cambia este */
-            --color5: darkgrey;
+    <link rel="stylesheet" href="assets/css/index.css" type="text/css">
 
-            /* 
-            --color1: #641927;
-            --color2: #7e252c;
-            --color3: #a83833;
-            --color4: #e25a3e;
-            --color5: #ff8e55;
-            */ 
-
-            --texto: var(--color1);
-            --fondo-texto: var(--color2);
-            --texto-resaltado: var(--color3);
-            --fondo-resaltado: var(--color4);
-            --fondo-pagina: var(--color5);
-            
-            background-color: var(--fondo-pagina);
-            color: var(--texto);
-        }
-
-        body {
-            counter-reset: section;
-            padding: 1rem;
-        }
-
-        h1 {
-            counter-reset: subsection;
-            line-height: 2rem;
-            font-size: 3rem;
-            background-color: unset;
-            color: var(--texto-resaltado);
-            padding: 2rem;
-            text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-        }
-        
-        img.logo {
-            height: 6rem;
-            background-color: unset;
-        }
-        
-        h2 {
-            line-height: 2em;
-            text-align: center;
-        }
-        
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10rem;
-            background-color: var(--fondo-resaltado);
-            /* 
-            box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.5);
-            z-index: 2;
-             */
-        }
-
-
-        /******************************************************/
-        /**  GALERÍA DE ARTÍCULOS                            **/
-        /******************************************************/
-
-        section.articulos {
-            counter-reset: section;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-
-            align-items: start;
-            gap: 3rem ;
-            justify-content: space-evenly;
-            max-width: 95%;
-            margin: 12rem auto; 
-        }
-
-        article {
-            background-color: var(--fondo-texto);
-            border-radius: var(--radio);
-            color: var(--texto);
-            margin: 0 auto;
-            text-align: justify;
-            min-width: 300px;
-        }
-
-        article * {
-            background-color: var(--fondo-texto);
-            color: var(--texto);
-            padding: 0 1rem;
-        }
-        article img {
-            padding: 0;
-            width: 100%;
-            height: 220px;
-            overflow-y: hidden;
-        }
-
-        article::before {
-            /* content: "Section " counter(section) ". "; */
-            content: counter(section);
-            counter-increment: section;
-
-            background-color: var(--fondo-resaltado);
-            border-radius: var(--radio);
-            box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
-            color: var(--texto-resaltado);
-            display: inline-block;
-            font-size: 3rem;
-            height: 1.5em;
-            left: -10px;
-            margin: 0 0 -1rem 0;
-            padding: 0.2em 0.1em 0 0.1em;
-            position: relative;
-            text-align: center;
-            top: -10px;
-            vertical-align: bottom;
-            width: 1.5em;
-        }
-        
-        article h2 a {
-            text-decoration: none;
-        }
-        
-        article p {
-            padding: inherit inherit 1em inherit;
-        }
-        div.descripcion {
-            padding: 0;
-            height: 120px;
-        }
-
-        .boton {
-            display: block;
-            margin: -10px 56% ;
-            background-color: transparent;
-            width: 50%;
-        }
-        .button {
-            background-color: var(--fondo-resaltado);
-            color: var(--texto-resaltado);
-            border: none;
-            border-radius: var(--radio);
-            box-shadow: -5px -5px 5px 1px rgba(0, 0, 0, 0.5);
-            padding: 1rem;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3rem;
-            background-color: var(--fondo-resaltado);
-            color: var(--texto-resaltado);
-            padding: 2rem;
-            box-shadow: -5px -5px 5px 1px rgba(0, 0, 0, 0.5);
-        }
-        footer * {
-            background-color: unset;
-        }
-
-    </style>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
 </head>
 
 <body>
     <header>
-        <h1>
+        <div class="logo">
             <img class="logo" src="assets/imgs/logo.png" alt="logo de la web"> 
+        </div>
+        <h1 class="titulo">
             Miniproyectos de pruebas de lenguajes Web
         </h1>
     </header>
@@ -236,10 +60,11 @@
         </article>
 
         <article>
-            <h2><a href="#">Titulo artículo</a></h2>
-            <img src="assets/imgs/prueba.png" alt="imagen aleatoria">
+            <h2><a href="#">Responsive Design con CSS Grid</a></h2>
+            <img src="assets/imgs/webResponsiveDesignHTML5_CSS-Grid/webResponsiveDesignHTML5_CSS-Grid.png" alt="webResponsiveDesignHTML5_CSS-Grid">
             <div class="descripcion">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil laboriosam necessitatibus omnis vero veritatis. Aliquid consequuntur hic beatae harum voluptate numquam obcaecati minus officia excepturi repudiandae? Exercitationem, sit aliquam.</p>
+                <p>Web Responsive Design HTML5 con CSS Grid</p>
+                <p class="tags"><a href="#responsive" class="tag">#responsive</a> <a href="#html5" class="tag">#html5</a> <a href="#css3" class="tag">#css3</a> <a href="#mediaqueries" class="tag">#mediaqueries</a> <a href="#grid" class="tag">#grid</a> <a href="#flexbox" class="tag">#flexbox</a> <a href="grid-template" class="tag">#grid-template</a> <a href="#grid-area" class="tag">#grid-area</a> </p>
             </div>
             <div class="boton">
                 <a href="#" class="button">Ir al artículo</a>        

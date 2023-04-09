@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-titulo: "Bebas Neue", cursive;
+  --font-texto: "Montserrat", sans-serif;
+
+  /* Variables del tema light */
+  --main-color: #1083d6;
+  --title-color: #2a3b47;
+  --text-color: #697477;
+  --light-text-color: #a0a7ac;
+  --border-color: #eff3f5;
+  --container-color: #ffffff;
+  --body-color: #fbfbfe;
+
+  /* Colores pastel de fondo */
+  --amarillo: #ffd700;
+  --verde: #90ee90;
+  --rosa: #ffc0cb;
+  --azul: #b0e0e6;
+  --melocoton: #ffa07a;
+}
+
+/* Variables para el tema dark */
+body.dark-theme {
+  --dark-main-color: #52a5e0;
+  --dark-title-color: #eff3f5;
+  --dark-text-color: #c8cdd0;
+  --dark-light-text-color: #a0a7ac;
+  --dark-border-color: #2a3b47;
+  --dark-container-color: #212e36;
+  --dark-body-color: #192229;
+
+  --dark-border-link-hidden: rgba(82, 165, 224, 0);
+  --dark-border-link-visible: rgba(82, 165, 224, 1);
+
+  /* Colores pastel de fondo */
+  --violeta-oscuro: #3b003b;
+  --verde-bosque: #228b22;
+  --verde-oliva: #6b8e23;
+  --azul-indigo: #4b0082;
+  --rojo-oscuro: #800000;
+}
+
+html {
+  height: 100%; /* para que nuestra página ocupe el 100% de la altura disponible */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-texto);
+  font-size: 1.2rem;
+  color: var(--dark-text-color);
+  background-color: var(--dark-body-color);
+  padding: 1rem;
+  min-height: 100%; /* para que nuestra página ocupe el 100% de la altura disponible */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-title-color);
+  font-family: var(--font-titulo);
+  margin: 0.5em 0;
+  padding: 0.5em 0;
+  border: 1px dashed white;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.9rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 1.6rem;
+}
+h5 {
+  font-size: 1.4rem;
+}
+h6 {
+  font-size: 1.2rem;
+}
+
+.contenedor-grid > * {
+  /* aplicamos estilos a todos los hijos del contenedor-grid (body) */
+  border: 1px solid var(--dark-main-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+.header {
+  grid-area: header; /* establecemos el area a la que se corresponde */
+  background-color: var(--violeta-oscuro);
+
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1, 2;
+  flex-shrink: 1;
+}
+
+.header .logo {
+  height: 7rem;
+  max-width: 100%;
+  padding: 0.2rem;
+}
+
+.header h1 {
+  flex-grow: 1; /* Le permitimos crecer a lo ancho */
+}
+
+.navbar {
+  grid-area: navbar;
+  background-color: var(--dark-container-color);
+}
+
+ul.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+ul.menu li {
+  padding: 0.5em 1em;
+}
+
+ul.menu li a {
+  color: var(--dark-main-color);
+  display: block;
+  text-decoration: none;
+  border-bottom: 0.2em solid var(--dark-border-link-hidden);
+}
+
+ul.menu li a:hover {
+  border-bottom: 0.2em solid var(--dark-border-link-visible);
+}
+
+.main {
+  grid-area: main;
+  background-color: var(--azul-indigo);
+}
+.aside {
+  grid-area: aside;
+  background-color: var(--rojo-oscuro);
+}
+.footer {
+  grid-area: footer;
+  background-color: var(--verde-oliva);
+}
+
+.contenedor-grid {
+  display: grid;
+  gap: 1rem;
+  /* Plantilla del CSS Grid. Versión pequeña, para móviles */
+  grid-template: 
+    /* El orden de esta lista afecta directamente a la ubicación de los contenedores correspondientes */
+    "header"
+    "navbar"
+    "main"
+    "aside"
+    "footer";
+}
+
+/* Para tablet */
+@media (min-width: 600px) {
+  .contenedor-grid {
+    /*  
+    grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;
+    /* Áreas del CSS Grid. * /
+    grid-template-areas: 
+            /* El orden de esta lista afecta directamente a la ubicación de los contenedores correspondientes * /
+      "header   header"
+      "navbar   navbar"
+      "aside    main"
+      "footer   footer ";
+    */
+    grid-template:
+      "header header" 100px
+      "navbar navbar" 50px
+      "aside  main" auto
+      "footer footer" 100px /
+      200px auto;
+
+    /* EXPLICACIÓN LÍNEA POR LÍNEA: */
+    /* Establecemos dos columnas ocupadas por el mismo contenedor y le damos una altura de 100px. */
+    /* Si queremos una columna/celda vacía, sólo debemos poner un punto (.) en la posición correspondiente  */
+    /*  */
+    /*  */
+    /* Establecemos el ancho de las dos columnas. Importante la barra inclinada para separar la especificación de las filas y las columnas */
+  }
+
+  .header {
+    flex-direction: row;
+  }
+
+  .header .logo {
+    max-height: 100%;
+  }
+  .navbar {
+    padding: 0;
+  }
+  ul.menu {
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Para escritorio */
+@media (min-width: 900px) {
+  .contenedor-grid {
+    grid-template:
+      "header header  header" 100px
+      "navbar main    aside" auto
+      "footer footer  footer" 100px /
+      200px auto 200px;
+
+    /* EXPLICACIÓN LÍNEA POR LÍNEA: */
+    /* Establecemos dos columnas ocupadas por el mismo contenedor y le damos una altura de 100px. */
+    /* Si queremos una columna/celda vacía, sólo debemos poner un punto (.) en la posición correspondiente  */
+    /*  */
+    /*  */
+    /* Establecemos el ancho de las dos columnas. Importante la barra inclinada para separar la especificación de las filas y las columnas */
+  }
+
+  ul.menu {
+    flex-direction: column;
+  }
+}
