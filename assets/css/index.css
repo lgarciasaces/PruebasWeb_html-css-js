@@ -1,210 +1,235 @@
-
-
-
 :root {
-    --texto: #d4d4d4;
-    --fondo-texto: #1e1e1e;
-    --texto-resaltado: #d4d4d4;
-    --fondo-resaltado: #1d3d5b;
-    --fondo-pagina: #333333;
-    --fondo-tags: #1d3d5b;
-    
+  --texto: #d4d4d4;
+  --fondo-texto: #1e1e1e;
+  --texto-resaltado: #d4d4d4;
+  --fondo-resaltado: #1d3d5b;
+  --fondo-pagina: #333333;
+  --fondo-tags: #1d3d5b;
+
+  background-color: var(--fondo-pagina);
+  color: var(--texto);
+
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  counter-reset: section;
+  padding: 1rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color1: #444;
+    --color2: whitesmoke;
+    --color3: whitesmoke;
+    --color4: #ee9b40; /* cambia este */
+    --color5: darkgrey;
+
+    --texto: #444;
+    --fondo-texto: whitesmoke;
+    --texto-resaltado: whitesmoke;
+    --fondo-resaltado: #ee9b40;
+    --fondo-pagina: darkgrey;
+    --link-color: cadetblue;
+
     background-color: var(--fondo-pagina);
     color: var(--texto);
-    
+
+    --radio: 0;
+
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     counter-reset: section;
     padding: 1rem;
-} 
-
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --color1: #444;
-        --color2: whitesmoke;
-        --color3: whitesmoke;
-        --color4: #ee9b40;  /* cambia este */
-        --color5: darkgrey;
-        
-        --texto: #444;
-        --fondo-texto: whitesmoke;
-        --texto-resaltado: whitesmoke;
-        --fondo-resaltado: #ee9b40;
-        --fondo-pagina: darkgrey;
-        --link-color: cadetblue;
-        
-        background-color: var(--fondo-pagina);
-        color: var(--texto);
-
-        --radio: 0;     
-
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-        counter-reset: section;
-        padding: 1rem;
-    }
+  }
 }
 
 @media (max-width: 740px) {
-    * {
-      color: red;
-    }
-    h1.titulo {
-        font-size: 2rem;
-    }
+  * {
+    color: red;
   }
-  
-  
+  h1.titulo {
+    font-size: 2rem;
+  }
+}
+
 header {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10rem;
-    background-color: var(--fondo-resaltado);
-    padding: 1rem;
-    flex-basis: center;
-    gap: 1rem;
-    /* 
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10rem;
+  background-color: var(--fondo-resaltado);
+  padding: 1rem;
+  flex-basis: center;
+  gap: 1rem;
+  /* 
     box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.5);
     z-index: 2;
     */
 }
 
 h1.titulo {
-    font-size: 3rem;
-    color: var(--texto-resaltado);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-    height: 100%;
+  font-size: 3rem;
+  color: var(--texto-resaltado);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  height: 100%;
 }
 
 .logo {
-    height: 6rem;
-    background-color: unset;
-    align-self: center;
+  height: 6rem;
+  background-color: unset;
+  align-self: center;
 }
 
 h2 {
-    line-height: 2em;
-    text-align: center;
+  line-height: 2em;
+  text-align: center;
 }
-
 
 /******************************************************/
 /**  GALERÍA DE ARTÍCULOS                            **/
 /******************************************************/
 
 section.articulos {
-    counter-reset: section;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  counter-reset: section;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 
-    align-items: start;
-    gap: 3rem ;
-    justify-content: space-evenly;
-    max-width: 95%;
-    margin: 12rem auto; 
+  align-items: start;
+  gap: 3rem;
+  justify-content: space-evenly;
+  max-width: 95%;
+  margin: 12rem auto;
 }
 
 article {
-    background-color: var(--fondo-texto);
-    border-radius: var(--radio);
-    color: var(--texto);
-    margin: 0 auto;
-    text-align: justify;
-    min-width: 300px;
+  background-color: var(--fondo-texto);
+  border-radius: var(--radio);
+  color: var(--texto);
+  margin: 0 auto;
+  text-align: justify;
+  min-width: 300px;
 }
 
 article * {
-    background-color: var(--fondo-texto);
-    color: var(--texto);
-    padding: 0 1rem;
+  background-color: var(--fondo-texto);
+  color: var(--texto);
+  padding: 0 1rem;
 }
 article img {
-    padding: 0;
-    width: 100%;
-    height: 220px;
-    overflow-y: hidden;
+  padding: 0;
+  width: 100%;
+  height: 220px;
+  overflow-y: hidden;
 }
 
 article::before {
-    /* content: "Section " counter(section) ". "; */
-    content: counter(section);
-    counter-increment: section;
+  /* content: "Section " counter(section) ". "; */
+  content: counter(section);
+  counter-increment: section;
 
-    background-color: var(--fondo-resaltado);
-    border-radius: var(--radio);
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
-    color: var(--texto-resaltado);
-    display: inline-block;
-    font-size: 3rem;
-    height: 1.5em;
-    left: -10px;
-    margin: 0 0 -1rem 0;
-    padding: 0.2em 0.1em 0 0.1em;
-    position: relative;
-    text-align: center;
-    top: -10px;
-    vertical-align: bottom;
-    width: 1.5em;
+  background-color: var(--fondo-resaltado);
+  border-radius: var(--radio);
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+  color: var(--texto-resaltado);
+  display: inline-block;
+  font-size: 3rem;
+  height: 1.5em;
+  left: -10px;
+  margin: 0 0 -1rem 0;
+  padding: 0.2em 0.1em 0 0.1em;
+  position: relative;
+  text-align: center;
+  top: -10px;
+  vertical-align: bottom;
+  width: 1.5em;
 }
 
 article h2 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 article p {
-    padding: inherit inherit 1em inherit;
+  padding: inherit inherit 1em inherit;
 }
 
-p.tags {
-    line-height: 2em;
+div.tags {
+  line-height: 1.5em;
+  /* display: grid;
+    gap: 0.5rem; */
 }
 
 a.tag {
-    padding: 0.3em;
-    margin: 0.2em;
-    border-radius: 0.5em;
-    background-color: var(--fondo-tags);
-    color: var(--texto-resaltado);
-    text-decoration: none;
+  background-color: var(--fondo-tags);
+  border-radius: 0.5em;
+  color: var(--texto-resaltado);
+  display: inline-block;
+  font-size: 0.8em;
+  margin: 0.2em;
+  padding: 0.1em 0.3em;
+  text-decoration: none;
 }
 div.descripcion {
-    padding: 0;
-    height: 120px;
+  padding: 0;
+  height: 200px;
 }
 
 .boton {
-    display: block;
-    margin: -10px 56% ;
-    background-color: transparent;
-    width: 50%;
+  display: block;
+  margin: -10px 56%;
+  background-color: transparent;
+  width: 50%;
 }
 .button {
-    background-color: var(--fondo-resaltado);
-    color: var(--texto-resaltado);
-    border: none;
-    border-radius: var(--radio);
-    box-shadow: -5px -5px 5px 1px rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
+  background-color: var(--fondo-resaltado);
+  color: var(--texto-resaltado);
+  border: none;
+  border-radius: var(--radio);
+  box-shadow: -5px -5px 5px 1px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3rem;
-    background-color: var(--fondo-resaltado);
-    color: var(--texto-resaltado);
-    padding: 2rem;
-    box-shadow: -5px -5px 5px 1px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  background-color: var(--fondo-resaltado);
+  color: var(--texto-resaltado);
+  padding: 2rem;
+  box-shadow: -5px -5px 5px 1px rgba(0, 0, 0, 0.5);
 }
 footer * {
-    background-color: unset;
+  background-color: unset;
+}
+
+/***********************************************************
+    TAGS
+***********************************************************/
+
+[href*="html"] {
+  background-color: #f7630c !important;
+}
+
+[href="#css3"],
+[href="#css"],
+[href="#responsive"],
+[href="#mediaqueries"],
+[href*="grid"],
+[href*="flex"] {
+  background-color: #0078d7 !important;
+}
+
+[href="#js"],
+[href="#typescript"] {
+  background-color: #fff100 !important;
+  color: #333 !important;
+}
+
+[href="#php"] {
+  background-color: #383838 !important;
 }
